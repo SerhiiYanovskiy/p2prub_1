@@ -3,7 +3,8 @@ from itertools import chain
 import config
 from google_ import GoogleSheet
 from p2p import P2P, get_spot
-
+from datetime import datetime
+now = datetime.now()
 
 def main():
     while True:
@@ -26,7 +27,7 @@ def main():
         res.append(spot_limit_list)
         for bank in config.BANKS_RUB:
             res.append(ad.get_corces(bank, "BUY"))
-        res.append([" "])
+        res.append([f"{now.strftime('%d/%m/%Y %H:%M:%S')}"])
         res.append([" "])
         res.append(["SPOT"])
         data_spots_1 = ["USDT/UAH", "BTS/USDT", get_spot("BTSUSDT"), "ETH/USDT", get_spot("ETHUSDT"), "BNB/USDT",
