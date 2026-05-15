@@ -1,0 +1,6 @@
+aiogram==3.4.1
+pandas
+openpyxl
+edge-tts
+python-dotenv
+requests
